@@ -112,13 +112,13 @@ MainWindow::MainWindow(int w, int h, const char* title)
     int startY = 20;
 
     // First Equation (dx/dt)
-    Fl_Box* lbl_eq1 = new Fl_Box(10, startY, 180, inputH, "x' = x(a1 - b1*x - c1*y)");
+    Fl_Box* lbl_eq1 = new Fl_Box(10, startY, 180, inputH, "x' = x(a₁ - b₁·x - c₁·y)");
     inp_a1 = new Fl_Value_Input(inputX, startY + 30, inputW, inputH, "a1:");
     inp_b1 = new Fl_Value_Input(inputX, startY + 60, inputW, inputH, "b1:");
     inp_c1 = new Fl_Value_Input(inputX, startY + 90, inputW, inputH, "c1:");
 
     // Second Equation (dy/dt)
-    Fl_Box* lbl_eq2 = new Fl_Box(10, startY + 130, 180, inputH, "y' = y(a2 - b2*y - c2*x)");
+    Fl_Box* lbl_eq2 = new Fl_Box(10, startY + 130, 180, inputH, "y' = y(a₂ - b₂·y - c₂·x)");
     inp_a2 = new Fl_Value_Input(inputX, startY + 160, inputW, inputH, "a2:");
     inp_b2 = new Fl_Value_Input(inputX, startY + 190, inputW, inputH, "b2:");
     inp_c2 = new Fl_Value_Input(inputX, startY + 220, inputW, inputH, "c2:");
@@ -134,7 +134,8 @@ MainWindow::MainWindow(int w, int h, const char* title)
     // Stationary Points Output Box
     out_statPoints = new Fl_Multiline_Output(10, startY + 320, 180, 150);
     out_statPoints->textsize(12);
-    out_statPoints->color(FL_BACKGROUND2_COLOR); // White background
+    out_statPoints->color(FL_BACKGROUND_COLOR); // Grey background
+    out_statPoints->box(FL_FLAT_BOX);           // Removes the input border
     out_statPoints->value("Stationary Points:\n(Click Update)");
 
     // Drawing Canvas
